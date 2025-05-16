@@ -1,0 +1,18 @@
+https://ubuntuforums.org/showthread.php?t=1945623
+
+A friend found a solution.
+
+in grub.cfg
+****
+terminal_output gfxterm
+if [ "${recordfail}" = 1 ]; then
+set timeout=-1
+****
+-1 should be 0 .
+
+It works.
+
+Now the only problem is that in case of kernel update, it will execute update-grub I think, which will overwrite this change. It is not that big problem.
+
+Regards,
+JG 

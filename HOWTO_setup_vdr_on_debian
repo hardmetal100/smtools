@@ -1,0 +1,58 @@
+remove CD-ROM from apt sources!!!  
+
+apt-get update
+apt-get dist-upgrade
+
+apt-get dist-upgrade
+apt-get install -fy software-properties-common python-software-properties
+
+apt-get install -fy kernel-source
+apt-get install -fy kernel-dev
+apt-get install -fy kernel-headers 
+apt-get install -fy git gcc make
+apt-get install -fy libdigest-sha-perl 
+apt-get install -fy libproc-processtable-perl patchutils patch
+
+apt-get install -fy libssl-dev
+apt-get install -fy autoconf
+apt-get install -fy libtool
+apt-get install -fy dvb-apps
+apt-get install -fy w-scan
+apt-get install -fy i965-va-driver vainfo
+
+wget ftp://ftp.tvdr.de/vdr/vdr-2.2.0.tar.bz2
+tar xvjf vdr-2.2.0.tar.bz2 
+cd vdr-2.2.0
+apt-get install -fy fontconfig
+apt-get install -fy vflib3
+apt-get install -fy libfribidi0
+apt-get install -fy libcap2
+apt-get install -fy libjpeg62-turbo
+apt-get install -fy libfontconfig1-dev
+apt-get install -fy libjpeg-dev
+apt-get install -fy libcap-dev
+apt-get install -fy ncurses-dev
+apt-get install -fy libncursesw5-dev
+make && make install
+
+git clone https://github.com/FernetMenta/vdr-plugin-vnsiserver
+git clone https://github.com/manio/vdr-plugin-dvbapi
+git clone http://projects.vdr-developer.org/git/vdr-manager.git
+
+
+# NOTE VNSISERVER: requestpacket.c with "throw MalformedVNSIPacket();" results in not working connection with Android
+
+
+
+##OSCAM
+#http://www.digital-eliteboard.com/165213-oscam-auf-debian-inkl-sonderhinweise-fuer-igel-thinclient-3200-lx.html
+apt-get -y install build-essential cmake make subversion
+apt-get install -y openssh-server nano less dialog console-data console-common lm-sensors libpcsclite1 portmap libusb-1.0-0-dev
+apt-add-repository ppa:oscam/ppa
+apt-get update
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys XXXX
+
+# CARD READER
+apt-get install pcscd
+apt-get install libpcsc-perl pcsc-tools 
+pcsc_scan 

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+amulecmd -h=nas2t.miedl.ddns.net -p=4712 -P=??? -c="add $*"
+
+exit 0

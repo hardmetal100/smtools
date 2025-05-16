@@ -1,0 +1,32 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda1 during installation
+UUID=d555a2b5-8b68-4b70-8565-be135cb5fbd7 /               ext4    errors=remount-ro 0       1
+# /home was on /dev/sda3 during installation
+UUID=6718deab-d656-4e7e-b068-e33bc5a69697 /home           ext4    defaults        0       2
+# swap was on /dev/sda5 during installation
+UUID=c15ff688-56fb-4941-9e86-cc2e03541658 none            swap    sw              0       0
+
+
+## NFS mounts
+192.168.1.101:/volume1/TV		/mnt/NAS/TV		nfs	defaults     0       0
+192.168.1.101:/volume1/Music		/mnt/NAS/Music		nfs	defaults     0       0
+192.168.1.101:/volume1/Pictures		/mnt/NAS/Pictures		nfs	defaults     0       0
+192.168.1.101:/volume1/Porn		/mnt/NAS/Porn		nfs	defaults     0       0
+192.168.1.101:/volume1/Backup		/mnt/NAS/Backup		nfs	defaults     0       0
+192.168.1.101:/volume1/homes/stefan		/mnt/NAS/homes/stefan		nfs	defaults     0       0
+192.168.1.101:/volume1/homes/nasroot               /mnt/NAS/homes/nasroot          nfs     defaults     0       0
+192.168.1.101:/volume1/Share		/mnt/NAS/Share		nfs	defaults     0       0
+192.168.1.101:/volume1/Programme		/mnt/NAS/Programme		nfs	defaults     0       0
+192.168.1.101:/volume1/Spiele		/mnt/NAS/Spiele		nfs	defaults     0       0
+192.168.1.101:/volume1/pxe		/mnt/NAS/pxe		nfs	defaults     0       0
+
+192.168.1.100:/home		/mnt/HTPC		nfs	defaults     0       0
+
+## SAMBA mounts
+//192.168.1.101/Serien		/mnt/NAS/Serien		cifs  credentials=/home/stefan/.smbcredentials,uid=stefan,gid=users,nounix,file_mode=0774,dir_mode=0775     0       0

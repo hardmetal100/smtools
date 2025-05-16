@@ -1,0 +1,16 @@
+DELETE OF JOBS DOES NOT WORK WITH GNOME
+https://bugzilla.gnome.org/show_bug.cgi?id=669679
+
+I found a work-around:
+
+1. Open /etc/cups/cupsd.conf.
+
+  sudo nano /etc/cups/cupsd.conf
+
+2. There should be two instances of "JobPrivateValues default". Change them to
+"JobPrivateValues none". Save and close.
+
+3. Then, restart cups:
+
+  sudo restart cups
+

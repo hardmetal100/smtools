@@ -1,0 +1,2 @@
+dd if=nexus_backup_20141002.ab bs=24 skip=1 | openssl zlib -d > nexus_backup_20141002.tar
+

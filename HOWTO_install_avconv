@@ -1,0 +1,11 @@
+#!/bin/bash
+
+apt-get -fy install yasm
+apt-get -fy install libvorbis-dev
+apt-get -fy install libx264-dev
+apt-get -fy install libxvidcore-dev
+
+wget git://git.libav.org/libav.org.git libav.org.git
+./configure --enable-gpl --enable-version3 --enable-libxvid --enable-libvorbis --enable-libx264
+make && make install
+

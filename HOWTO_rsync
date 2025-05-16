@@ -1,0 +1,1 @@
+rsync -u -h -r -v --progress --size-only Videos/* /mnt/NAS/Porn

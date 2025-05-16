@@ -1,0 +1,5 @@
+#!/bin/sh 
+BASEDIR=$(dirname $0)
+BASENAME=$(basename $0)
+python3 $BASEDIR/.python/$BASENAME.py "$@"
+

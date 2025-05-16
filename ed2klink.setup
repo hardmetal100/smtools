@@ -1,0 +1,8 @@
+#!/bin/bash
+
+gconftool-2 -s /desktop/gnome/url-handlers/ed2k/command '/home/stefan/bin/ed2klink %s' --type String
+gconftool-2 -s /desktop/gnome/url-handlers/ed2k/enabled --type Boolean true
+
+
+# OR ADD THE FOLLOWING BOOLEAN VARIABLE TO FIREFOX (about:config)
+# network.protocol-handler.expose.ed2k
